@@ -18,17 +18,20 @@ logging.basicConfig(
 class executiveorder:
     ocd_id: str
     abbr: str
-    title: str
     source_url: str
     published: datetime.date = field()
     # if the state gives a unique ID
     identifier: str = ""
+    title: str = ""
     pdf_url: str = ""
     html_url: str = ""
     classification: str = "executive-order"
 
     def __post_init__(self):
         self.abbr = self.abbr.upper()
+
+        if self.title == "" and self.identifier == "":
+            raise ValueError("Order must have either an Identifier, a Title, or both")
 
         if not os.path.exists("./cache"):
             os.makedirs("./cache")
