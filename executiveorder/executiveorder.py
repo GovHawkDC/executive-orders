@@ -25,7 +25,12 @@ class executiveorder:
     title: str = ""
     pdf_url: str = ""
     html_url: str = ""
+    executive: str = ""
     classification: str = "executive-order"
+    rescinded: bool = False
+    superceded: bool = False
+    replaced: bool = False
+    amended: bool = False
 
     def __post_init__(self):
         self.abbr = self.abbr.upper()
