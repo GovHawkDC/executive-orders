@@ -38,6 +38,9 @@ class executiveorder:
         if self.title == "" and self.identifier == "":
             raise ValueError("Order must have either an Identifier, a Title, or both")
 
+        if self.html_url == "" and self.pdf_url == "":
+            raise ValueError("Order must have either a pdf_url, an html_url, or both")
+
         if not os.path.exists("./cache"):
             os.makedirs("./cache")
 
