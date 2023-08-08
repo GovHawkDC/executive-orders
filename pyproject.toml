@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "executive-orders"
+version = "0.1.0"
+description = "Scraper for US State Executive Orders"
+authors = ["Tim Showers <tim.showers@govhawk.com>"]
+readme = "README.md"
+packages = [{include = "executive_orders"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+lxml = "^4.9.3"
+python-dateutil = "^2.8.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
