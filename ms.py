@@ -26,7 +26,7 @@ for row in page.xpath("//table[@class='table']/tbody/tr"):
 
     eo = executiveorder.executiveorder(
         abbr="ms",
-        executive=governor
+        executive=governor,
         identifier=identifier,
         ocd_id="ocd-division/country:us/state:ms",
         pdf_url=pdf_url,
