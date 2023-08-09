@@ -11,7 +11,6 @@ page = lxml.html.fromstring(page)
 page.make_links_absolute(url)
 
 for row in page.xpath("//ul[@class='plain']/li"):
-    print(row.text_content().strip())
     link = row.xpath(".//a")[0]
     title = link.text_content().strip()
     href = link.xpath("@href")[0]
